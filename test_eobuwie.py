@@ -4,6 +4,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep
 
+# DANE TESTOWE:
+valid_name = "Marcin"
 
 class TestRegistration(unittest.TestCase):
     def setUp(self):
@@ -20,16 +22,19 @@ class TestRegistration(unittest.TestCase):
     def testInvalidEmail(self):
         driver = self.driver
         # Kroki:
-        # 1. Kliknij Zarejestruj - otwiera się strona rejestracji
+        # Zaakceptuj popup
         accept_btn = driver.find_element(By.XPATH, '//button[@data-testid="permission-popup-accept"]')
         accept_btn.click()
         # 1. Kliknij Zarejestruj
         register_btn = driver.find_element(By.XPATH, '//a[@data-testid="header-register-link"]')
         register_btn.click()
-        # otwiera się strona rejestracji
+        # Sprawdź, czy otwiera się strona rejestracji
         self.assertIn("Utwórz nowe konto klienta", driver.title)
         # "Czysty" Python
         # assert "Utwórz nowe konto klienta" in driver.title
+        # 2. Wpisz imię
+        name_input = driver.find_element(By.ID, 'firstname')
+        name_input.send_keys(valid_name)
 
 
         # Kontrolny sleep na końcu -  do usunięcia jak będzie gotowe
