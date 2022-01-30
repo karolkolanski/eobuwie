@@ -1,0 +1,27 @@
+Projekt : eobuwie
+
+Scenariusz testowy:
+Rejestracja nowego użytkownika
+
+Przypadek testowy:
+ID 001 Rejestracja użytkownika przy użyciu niepoprawnego adresu e-mail
+
+Warunki wstępne:
+1. Otwarta strona https://www.eobuwie.com.pl/
+2. Użytkownik nie jest zalogowany
+
+Kroki:
+1. Kliknij Zarejestruj - otwiera się strona rejestracji
+2. Wpisz imię
+3. Wpisz nazwisko
+4. Wpisz niepoprawy e-mail
+5. Wpisz hasło
+6. Potwierdź hasło
+7. Zazancz zgodę na otrzymywanie informajci handlowych od MODIVO S.A
+8. Zaznacz akceptację regulaminu
+# NIE ROBIMY
+(9. Klinij "Zarejestruj się")
+
+Oczekiwany rezultat:
+1. Użytkownik otrzymuje informację "Wprowadzono niepoprawny adres-email" pojawiającą się pod polem
+2. Konto nie zostaje założone
