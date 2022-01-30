@@ -23,6 +23,15 @@ class TestRegistration(unittest.TestCase):
         # 1. Kliknij Zarejestruj - otwiera się strona rejestracji
         accept_btn = driver.find_element(By.XPATH, '//button[@data-testid="permission-popup-accept"]')
         accept_btn.click()
+        # 1. Kliknij Zarejestruj
+        register_btn = driver.find_element(By.XPATH, '//a[@data-testid="header-register-link"]')
+        register_btn.click()
+        # otwiera się strona rejestracji
+        self.assertIn("Utwórz nowe konto klienta", driver.title)
+        # "Czysty" Python
+        # assert "Utwórz nowe konto klienta" in driver.title
+
+
         # Kontrolny sleep na końcu -  do usunięcia jak będzie gotowe
         sleep(3)
 
