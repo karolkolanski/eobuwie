@@ -8,6 +8,8 @@ from time import sleep
 valid_name = "Marcin"
 valid_last_name = "Nowak"
 
+invalid_email = "kjdkj.pl"
+
 class TestRegistration(unittest.TestCase):
     def setUp(self):
         # Przygotowanie testu
@@ -39,6 +41,9 @@ class TestRegistration(unittest.TestCase):
         # 3. Wpisz nazwisko
         last_name_input = driver.find_element(By.ID, 'lastname')
         last_name_input.send_keys(valid_last_name)
+        # 4. Wpisz niepoprawy e-mail
+        email_input = driver.find_element(By.ID, 'email_address')
+        email_input.send_keys(invalid_email)
 
 
         # Kontrolny sleep na końcu -  do usunięcia jak będzie gotowe
