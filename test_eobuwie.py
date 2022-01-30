@@ -7,6 +7,7 @@ from time import sleep
 # DANE TESTOWE:
 valid_name = "Marcin"
 valid_last_name = "Nowak"
+valid_password = "alamakotasfinksa"
 
 invalid_email = "kjdkj.pl"
 
@@ -44,6 +45,19 @@ class TestRegistration(unittest.TestCase):
         # 4. Wpisz niepoprawy e-mail
         email_input = driver.find_element(By.ID, 'email_address')
         email_input.send_keys(invalid_email)
+        # 5. Wpisz hasło
+        driver.find_element(By.ID, 'password').send_keys(valid_password)
+        # 6. Potwierdź hasło
+        driver.find_element(By.ID, 'confirmation').send_keys(valid_password)
+        # 7. Zaznacz zgodę na otrzymywanie informacji handlowych od MODIVO S.A
+        marketing_checkbox_label = driver.find_element(By.XPATH, '//label[@class="checkbox-wrapper__label account-create__statement-label"]')
+        marketing_checkbox_label.click()
+
+        ## Oczekiwany rezultat
+        errors = driver.find_elements(By.XPATH, '//span[@class="help-block form-error"]')
+        # Sprawdzam, czy jest 1 element w liście errors
+        self.assertEqual(len(errors), 1)
+        self.assertEqual(errors[0].text, "Wprowadzono niepoprawny adres e-mail")
 
 
         # Kontrolny sleep na końcu -  do usunięcia jak będzie gotowe
