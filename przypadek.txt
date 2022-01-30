@@ -17,7 +17,7 @@ Kroki:
 4. Wpisz niepoprawy e-mail
 5. Wpisz hasło
 6. Potwierdź hasło
-7. Zazancz zgodę na otrzymywanie informajci handlowych od MODIVO S.A
+7. Zaznacz zgodę na otrzymywanie informacji handlowych od MODIVO S.A
 8. Zaznacz akceptację regulaminu
 # NIE ROBIMY
 (9. Klinij "Zarejestruj się")

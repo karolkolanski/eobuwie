@@ -54,14 +54,15 @@ class TestRegistration(unittest.TestCase):
         marketing_checkbox_label.click()
 
         ## Oczekiwany rezultat
+        # Użytkownik otrzymuje informację "Wprowadzono niepoprawny adres-email" pojawiającą się pod polem
+        # Wyszykuję błędy
         errors = driver.find_elements(By.XPATH, '//span[@class="help-block form-error"]')
         # Sprawdzam, czy jest 1 element w liście errors
-        self.assertEqual(len(errors), 1)
-        self.assertEqual(errors[0].text, "Wprowadzono niepoprawny adres e-mail")
-
-
+        self.assertEqual(1, len(errors))
+        # Sprawdź tekst błędu
+        self.assertEqual("Wprowadzono niepoprawny adres e-mail", errors[0].text)
         # Kontrolny sleep na końcu -  do usunięcia jak będzie gotowe
-        sleep(3)
+        # sleep(3)
 
 # Jeśli uruchamiam ten plik
 if __name__ == "__main__":
