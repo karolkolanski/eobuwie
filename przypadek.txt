@@ -25,3 +25,6 @@ Kroki:
 Oczekiwany rezultat:
 1. Użytkownik otrzymuje informację "Wprowadzono niepoprawny adres-email" pojawiającą się pod polem
 2. Konto nie zostaje założone
+
+Warunki końcowe:
+Przeglądarka jest wyłączona
