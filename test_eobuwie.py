@@ -6,6 +6,7 @@ from time import sleep
 
 # DANE TESTOWE:
 valid_name = "Marcin"
+valid_last_name = "Nowak"
 
 class TestRegistration(unittest.TestCase):
     def setUp(self):
@@ -35,6 +36,9 @@ class TestRegistration(unittest.TestCase):
         # 2. Wpisz imię
         name_input = driver.find_element(By.ID, 'firstname')
         name_input.send_keys(valid_name)
+        # 3. Wpisz nazwisko
+        last_name_input = driver.find_element(By.ID, 'lastname')
+        last_name_input.send_keys(valid_last_name)
 
 
         # Kontrolny sleep na końcu -  do usunięcia jak będzie gotowe
